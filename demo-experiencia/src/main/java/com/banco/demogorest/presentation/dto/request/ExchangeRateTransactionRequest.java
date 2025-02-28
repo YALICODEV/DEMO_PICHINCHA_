@@ -1,0 +1,31 @@
+package com.banco.demogorest.presentation.dto.request;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.Length;
+
+import java.math.BigDecimal;
+
+public record ExchangeRateTransactionRequest(
+    @NotNull(message = "Amount is required")
+    @DecimalMin(value = "0.0", message = "Amount must be greater than zero")
+    BigDecimal amount,
+
+    @JsonProperty("source_currency")
+    @NotBlank(message = "Source currency is required")
+    @Length(min = 3, max = 3, message = "Currency code must have 3 characters")
+    String sourceCurrency,
+
+    @JsonProperty("target_currency")
+    @NotBlank(message = "Target currency is required")
+    @Length(min = 3, max = 3, message = "Currency code must have 3 characters")
+    String targetCurrency,
+
+    @JsonProperty("exchange_rate")
+    @NotNull(message = "Exchange rate is required")
+    @DecimalMin(value = "0.0", message = "Exchange rate must be greater than zero")
+    BigDecimal exchangeRate
+) {
+}
