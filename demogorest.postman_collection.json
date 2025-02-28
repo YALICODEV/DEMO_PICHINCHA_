@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "b5050e09-9c04-450b-ab98-19df1db168ad",
+		"name": "Demo Gorest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28052099"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"admin@google.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exchange rate",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnb29nbGUuY29tIiwiaWQiOjEsImlhdCI6MTczOTY2ODAyMSwiZXhwIjoxNzM5NjcxNjIxfQ.ItFuKm9G8EHYWYez7s1KN3WeUZJ2qHWwEr9zyDIjKHU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": \"100.00\",\r\n    \"source_currency\": \"USD\",\r\n    \"target_currency\": \"EUR\",\r\n    \"exchange_rate\": \"0.85\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/experience/7701089",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"experience",
+						"7701089"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Exchange rate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"source_currency\": \"PEN\",\r\n  \"target_currency\": \"USD\",\r\n  \"exchange_rate\": 0.20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/exchange-rate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"exchange-rate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Exchange rate",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"source_currency\": \"PEN\",\r\n  \"target_currency\": \"USD\",\r\n  \"exchange_rate\": 10.2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/exchange-rate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"exchange-rate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get exchange rate",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/exchange-rate/PEN/USD",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"exchange-rate",
+						"PEN",
+						"USD"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

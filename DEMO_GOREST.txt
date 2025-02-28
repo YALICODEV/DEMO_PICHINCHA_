@@ -1,0 +1,28 @@
+Desarrolla dos API’s con los siguientes requerimientos
+Requerimientos funcionales:
+
+El sistema debe poder realizar un tipo de cambio a un monto donde se deben utilizar el ID del usuario, monto, moneda de origen, moneda de destino, monto con el tipo de campo y el tipo de cambio.
+
+API de Experiencia (nro 1) (comunicación con cliente, ejemplo : front end, postman , etc)
+Debe tener una autenticación.
+Por cada tipo de cambio realizado, se debe registrar quien hizo la solicitud (auditoría funcional).
+Consumir servicio REST free “ https://gorest.co.in/ “ para validar si el usuario existe y obtener nombre para su posterior registro
+Consumir API de Soporte para realizar las operaciones con Base de Datos.
+
+API de Soporte (nro 2) (Realiza la comunicación con BD)
+Debe Permitir el registro, actualización y búsqueda del tipo de cambio. 
+Por cada tipo de cambio realizado, se debe registrar quien hizo la solicitud (auditoría funcional). 
+Nota : al registrar los procesos de cambio en BD, contemplar estos valores(Nombre usuario , monto inicial, monto final, tipo de cambio y fecha del proceso)
+
+
+Requerimientos no funcionales:
+Lenguaje es Java.
+Framework es Spring boot.
+Test Unitarios de las APIS
+Utilizar programación reactiva WEB FLUX
+Utilizar H2 para persistencia de datos.
+Manejo de Excepciones
+La seguridad debe ser a través de JWT.
+Usar Postman o SOAPUI para el consumo de la API.
+Documentar la arquitectura de software
+Swagger
